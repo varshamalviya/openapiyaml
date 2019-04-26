@@ -1,0 +1,33 @@
+swagger: "2.0"
+info:
+  title: "Machine Info"
+  description: "Get the Machine Info"
+  version: "1.0.0"
+host: ".appspot.com"
+schemes:
+  - "https"
+paths:
+  "/machineinfo":
+    get:
+      description: "Get the machineinfo"
+      operationId: "machineinfo"
+      parameters:
+        -
+          name: machineinfo
+          in: query
+          required: false
+          type: string
+      responses:
+        200:
+          description: "Success."
+          schema:
+          type: string
+        400:
+          description: "Error Occurred"
+      security:
+        - api_key: []                                      
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "key"
+    in:   "query"
